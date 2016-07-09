@@ -1,4 +1,4 @@
-Hush Puppy 0.0.0.4
+Hush Puppy 0.0.0.5
 =========================
 ##### Login Details Manager for websites and pc login details.
 ##### This App has been updated to be more of a learning tool and framework for Autoplay Media Studios.
@@ -17,4 +17,9 @@ Hush Puppy 0.0.0.4
 ####Autoplay Media Studios 8x(
     Created by Indigorose
     http://www.Indigorose.com/
+)
+
+#### Hush Puppy 2017(
+    Mimo Moka
+    http://im-mimo.xyz
 )
