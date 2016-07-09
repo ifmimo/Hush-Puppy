@@ -19,7 +19,7 @@ I would advice people to build the source use it and slowly learn what each sect
 ListIcon Action Plugin(
     Created by Imagine Programming
     http://www.imagine-programming.com/
-    Copyright © 2010 Imagine Programming (And LuaDevils)
+    Copyright Â© 2010 Imagine Programming (And LuaDevils)
 )
 
 Enjoy, remeber to credit people for there work.</Comments>
@@ -76,8 +76,8 @@ Enjoy, remeber to credit people for there work.</Comments>
 </AudioBGMusic>
 <Globals>
 <Script>--[[
-	Welcome to Hush Puppy Framework 0.4
-	Author Rexzooly Kai Black
+	Welcome to Hush Puppy Framework 0.0.0.5
+	Author Rexzooly Kai Black(0.0.0.4) & MiMo Moka
 	
 	This Framework users ListIcon 2.2.0.0
 	this plugin is by Imagine Programming (IP) imagine-programming.com
@@ -95,9 +95,10 @@ Enjoy, remeber to credit people for there work.</Comments>
 ]]--
 HP = {
 		-- Edit this below to what ever you would like the title to be EG: Title = 'My Software 01';
-		Title = 'Hush Puppy (0.4) By Rexzooly Kai Black', 
+		Title = 'Hush Puppy (2017) By MiMo Moka', 
 		-- This is the name of the database file you can name this anything EG: db.msc
-		DatabaseName = 'core.sys'
+		DatabaseName = 'core.sys',
+		AES = false
 	};
 -- Since we have already set this in the main setup section we don't need to edit this path.
 -- WARNING EDIT ONLY IF YOU KNOW WHAT YOUR DOING
@@ -118,6 +119,14 @@ function HP:Decode(s_string)
 	CleanString = Crypto.BlowfishDecryptString(LockedString, HPTool.Host..HPTool.User);
 	return CleanString;
 end
+function HP:Wrap()
+	-- PlaceHolder for AES App
+end
+
+function HP:Unwrap()
+	-- PlaceHolder for AES App
+end
+
 -- This function creats the database, requests the user password and sets up the app to be ready to work, 
 -- WARNING EDIT ONLY IF YOU KNOW WHAT YOUR DOING
 function HP:Create(b_locked)
@@ -552,18 +561,22 @@ end
 
 function HP:About(s_about)
 	if s_about == 'r' then
-		dTitle = 'Rexzooly Kai Black';
-		dMSG = 'Rexzooly Kai Black, well who am I? I am a hobbiest programmer with many health problems, I try my best to program useful software and help others out. I have created many programs/app in AMS and I have provided many source code for these apps, what to know more about them then click yes below to view my GitHub Page\r\n\r\nView GitHub?';
-		dURL = 'https://github.com/rexzooly';
+		dTitle = 'MiMo Moko';
+		dMSG = 'MiMo Moka, well who am I? I am a hobbiest programmer with many health problems, I try my best to program useful software and help others out. I have created many programs/app in AMS and I have provided many source code for these apps, what to know more about them then click yes below to view my GitHub Page\r\n\r\nView GitHub?';
+		dURL = 'https://github.com/ifmimo';
 	end
 	if s_about == 'a' then
 		dTitle =  'AutoPlay Media Studios';
 		dMSG = 'AuptoPlay Media Studios, this software was created by Indigorose to create Autoplay Menus, the ones we see in many games or other software but it grow from there as AMS included the LUA Scripting engine this meant programmers alike could make AMS do much more powerful things.\r\n\r\nFind out more about AMS and IR please visit there website, Indigorose.com, would you like to visit there site now?';
 		dURL = 'http://www.indigorose.com/';
 	end
-	
-	if s_about == 'h' then
-		dTitle = 'Hush Puppy';
+	if s_about == 's' then
+		dTitle = 'Shadiku/Aixxe';
+		dMSG = [[Shadiku.com/aixxe.net]];
+		dURL = 'http://Shadiku.com';
+	end	
+	if s_about == 'i' then
+		dTitle = 'IP/Bass';
 		dMSG = [[Coming Soon]];
 		dURL = 'http://www.imagine-programming.com/';
 	end
@@ -602,7 +615,7 @@ end</Script>
 <Author/>
 <Contact/>
 <Web/>
-<Copyright>Copyright © 2011</Copyright>
+<Copyright>Copyright Â© 2016</Copyright>
 <Desc>This framework uses ListIcon 2.2.0.0, this framework is here for you to learn SQLite3 and ListIcon very basics, it is a start for many different database driven programs.
 
 Big thanks to Shadiku.com for there help on how to use ListIcon.
@@ -612,7 +625,7 @@ I would advice people to build the source use it and slowly learn what each sect
 ListIcon Action Plugin(
     Created by Imagine Programming
     http://www.imagine-programming.com/
-    Copyright © 2010 Imagine Programming (And LuaDevils)
+    Copyright Â© 2010 Imagine Programming (And LuaDevils)
 )
 
 Enjoy, remeber to credit people for there work.</Desc>
@@ -743,7 +756,16 @@ Enjoy, remeber to credit people for there work.</Desc>
 	---- About HP
 	if e_ID == 403 then
 		HP:About('h')
-	end</Script>
+	end
+	---- About Shadiku
+	if e_ID == 404 then
+		HP:About('s')
+	end
+	---- About IP
+	if e_ID == 405 then
+		HP:About('i')
+	end
+</Script>
 <TreeStates>
 <TreeState>0</TreeState>
 <TreeState>0</TreeState>
